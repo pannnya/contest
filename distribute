@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# USAGE
+# ./distribute template.cpp
+
 PROBLEMS="A B C D E F G"
 
 for problem in $PROBLEMS
