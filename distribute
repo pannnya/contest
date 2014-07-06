@@ -5,7 +5,12 @@ PROBLEMS="A B C D E F G"
 for problem in $PROBLEMS
 do
   if ! [ -d $problem ]; then mkdir $problem; fi
-  cp $1 $problem/$problem.cpp
+
+  if ! [ -e "$problem/$problem.cpp" ]
+  then
+    cp -i $1 $problem/$problem.cpp
+  fi
+
   cp template.mk $problem/Makefile
   touch $problem/$problem.sample_input
   touch $problem/$problem.sample_answer
