@@ -1,0 +1,14 @@
+#! /bin/sh
+
+PROBLEMS="A B C D E F G"
+
+for problem in $PROBLEMS
+do
+  if ! [ -d $problem ]; then mkdir $problem; fi
+  cp $1 $problem/$problem.cpp
+  cp template.mk $problem/Makefile
+  touch $problem/$problem.sample_input
+  touch $problem/$problem.sample_answer
+  touch $problem/$problem.in1
+  touch $problem/$problem.in2
+done
